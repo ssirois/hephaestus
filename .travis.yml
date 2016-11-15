@@ -1,0 +1,16 @@
+language: xslt
+
+
+os:
+  - linux
+
+
+addons:
+  apt:
+    packages:
+      - xsltproc
+      - shunit2
+
+
+script:
+  - make check
