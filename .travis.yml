@@ -1,0 +1,15 @@
+language: xslt
+
+
+os:
+  - linux
+
+
+addons:
+  apt:
+    packages:
+      - xsltproc
+
+
+script:
+  - make check
