@@ -1,4 +1,8 @@
-== Raison d'être ==
+Ἥφαιστος (Hephaestus) 
+=====================
+
+Raison d'être
+-------------
 
 I use PDFs as a last resort.  I actually only use them when a recipient
 with whom i need to communicate really needs that format.  Why a simple
@@ -10,7 +14,8 @@ But there is nothing more irritating than navigating on the HTTP
 protocol, one hyperlinked document to another and tripping over a god
 damn PDF document without any HTML equivalent easily available.
 
-== Purpose ==
+Purpose
+-------
 
 This set of XSLT were made to complement default output of the pdftohtml
 program.
@@ -18,13 +23,15 @@ program.
 By transforming the default XML output into a POSH HTML5 file, it ease
 the editing work that I sometime wish to accomplish on the file.
 
-== Rationale ==
+Rationale
+---------
 
 Sometimes ``pdftohtml -s <document.pdf>`` or ``pdftotext <document.pdf>``
 just does the job (when I just want to read).  Sometimes (when I want
 to edit), I would prefer a ''cleaner'' HTML file to work with.
 
-== Colophon ==
+Colophon
+--------
 
 Ἥφαιστος (Hephaestus) is the Greek god of blacksmiths, craftsmen,
 artisans, sculptors, … According to the myth, Ἥφαιστος had
