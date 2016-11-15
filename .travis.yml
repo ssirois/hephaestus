@@ -9,6 +9,7 @@ addons:
   apt:
     packages:
       - xsltproc
+      - shunit2
 
 
 script:
