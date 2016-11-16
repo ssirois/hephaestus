@@ -29,6 +29,7 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <xsl:output method="html" indent="no" />
 
   <xsl:template match="/pdf2xml">
+    <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
     <xsl:element name="html">
       <xsl:apply-templates select="page" />
     </xsl:element>

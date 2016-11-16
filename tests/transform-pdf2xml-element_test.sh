@@ -24,10 +24,10 @@
 
 testThatApdf2xmlIsTransformAsAnHtmlDocument() {
   xmldoc="$xmldocHeader<pdf2xml />"
-  expected="<html></html>"
+  expected="<!DOCTYPE html><html></html>"
   actual=`echo ${xmldoc} | ${xsltprocCmd}`
 
-  assertEquals ${expected} ${actual}
+  assertEquals "${expected}" "${actual}"
 }
 
 oneTimeSetUp() {
