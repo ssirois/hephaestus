@@ -26,6 +26,9 @@ rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 TEST_FILES:=$(call rwildcard,./tests/,*_test.sh)
 TEST_TARGETS=$(patsubst %,check_%,$(TEST_FILES))
 
+PDFTOHTML=`which pdftohtml`
+XSLTPROC=`which xsltproc`
+
 .PHONY: check
 check: $(TEST_TARGETS)
 
@@ -34,3 +37,16 @@ check_%:
 
 check_./%:
 	shunit2 $(*)
+
+build-example-artefacts: artefacts-dir artefacts/speak-white_michele-lalonde.xml artefacts/speak-white_michele-lalonde.html
+
+artefacts/speak-white_michele-lalonde.xml: artefacts-dir
+	$(PDFTOHTML) -xml assets/speak-white_michele-lalonde.pdf artefacts/speak-white_michele-lalonde.xml
+
+artefacts/speak-white_michele-lalonde.html: artefacts/speak-white_michele-lalonde.xml
+	$(XSLTPROC) --novalid --encoding UTF-8 --output artefacts/speak-white_michele-lalonde.html src/xslt/pdf2xml.xslt artefacts/speak-white_michele-lalonde.xml
+
+artefacts-dir: artefacts
+
+artefacts:
+	mkdir ./artefacts
