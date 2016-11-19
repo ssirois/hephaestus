@@ -22,6 +22,9 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+before_script:
+  - apt update -qq && apt install -y -qq shunit2
+
 stages:
   - test
   - deploy
