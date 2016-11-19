@@ -23,7 +23,7 @@
 # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 before_script:
-  - apt-get update -qq && apt-get install -y -qq shunit2 xsltproc
+  - apt-get update -qq && apt-get install -y -qq shunit2 xsltproc poppler-utils
 
 stages:
   - test
