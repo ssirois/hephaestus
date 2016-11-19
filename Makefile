@@ -38,15 +38,15 @@ check_%:
 check_./%:
 	shunit2 $(*)
 
-build-example-artefacts: artefacts-dir artefacts/speak-white_michele-lalonde.xml artefacts/speak-white_michele-lalonde.html
+build-example-artifacts: artifacts-dir artifacts/speak-white_michele-lalonde.xml artifacts/speak-white_michele-lalonde.html
 
-artefacts/speak-white_michele-lalonde.xml: artefacts-dir
-	$(PDFTOHTML) -xml assets/speak-white_michele-lalonde.pdf artefacts/speak-white_michele-lalonde.xml
+artifacts/speak-white_michele-lalonde.xml: artifacts-dir
+	$(PDFTOHTML) -xml assets/speak-white_michele-lalonde.pdf artifacts/speak-white_michele-lalonde.xml
 
-artefacts/speak-white_michele-lalonde.html: artefacts/speak-white_michele-lalonde.xml
-	$(XSLTPROC) --novalid --encoding UTF-8 --output artefacts/speak-white_michele-lalonde.html src/xslt/pdf2xml.xslt artefacts/speak-white_michele-lalonde.xml
+artifacts/speak-white_michele-lalonde.html: artifacts/speak-white_michele-lalonde.xml
+	$(XSLTPROC) --novalid --encoding UTF-8 --output artifacts/speak-white_michele-lalonde.html src/xslt/pdf2xml.xslt artifacts/speak-white_michele-lalonde.xml
 
-artefacts-dir: artefacts
+artifacts-dir: artifacts
 
-artefacts:
-	mkdir ./artefacts
+artifacts:
+	mkdir ./artifacts
