@@ -28,6 +28,7 @@ TEST_TARGETS=$(patsubst %,check_%,$(TEST_FILES))
 
 PDFTOHTML=`which pdftohtml`
 XSLTPROC=`which xsltproc`
+TIDY=`which tidy`
 
 .PHONY: check
 check: $(TEST_TARGETS)
@@ -45,6 +46,8 @@ artifacts/speak-white_michele-lalonde.xml: artifacts-dir
 
 artifacts/speak-white_michele-lalonde.html: artifacts/speak-white_michele-lalonde.xml
 	$(XSLTPROC) --novalid --encoding UTF-8 --output artifacts/speak-white_michele-lalonde.html src/xslt/pdf2xml.xslt artifacts/speak-white_michele-lalonde.xml
+	# exit code 1 of <tidy> is warning and fine for this program
+	$(TIDY) -quiet -file /dev/null -utf8 -indent -output artifacts/speak-white_michele-lalonde.html artifacts/speak-white_michele-lalonde.html ; if [ $$? = 1 ] ; then exit 0 ; else exit $$? ; fi
 
 artifacts-dir: artifacts
 

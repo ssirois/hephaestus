@@ -24,6 +24,8 @@
 
 before_script:
   - apt-get update -qq && apt-get install -y -qq shunit2 xsltproc poppler-utils
+  - wget http://binaries.html-tidy.org/binaries/tidy-5.2.0/tidy-5.2.0-64bit.deb
+  - dpkg -i tidy-5.2.0-64bit.deb
 
 stages:
   - test
