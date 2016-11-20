@@ -43,8 +43,8 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         </xsl:attribute>
       </xsl:if>
       <xsl:for-each select="text">
-        <xsl:sort select="@top" />
-        <xsl:sort select="@left" />
+        <xsl:sort select="@top" data-type="number" />
+        <xsl:sort select="@left" data-type="number" />
 
         <xsl:element name="span">
           <xsl:value-of select="." />

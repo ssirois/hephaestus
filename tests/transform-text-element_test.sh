@@ -56,6 +56,30 @@ testThatTwoTextElementPositionnedOnYAxisPreserveThereOrderRegardlessOfThereSourc
   assertEquals "${expected}" "${actual}"
 }
 
+testThatYAxisIsSortNumericallyAndNotAsAString() {
+  xmldoc="$xmldocHeader
+  <page>
+    <text top=\"1001\">World</text>
+    <text top=\"2\">Hello</text>
+  </page>"
+  expected="<article><span>Hello</span><span>World</span></article>"
+  actual=`echo ${xmldoc} | ${xsltprocCmd}`
+
+  assertEquals "${expected}" "${actual}"
+}
+
+testThatXAxisIsSortNumericallyAndNotAsAString() {
+  xmldoc="$xmldocHeader
+  <page>
+    <text left=\"1000\">World</text>
+    <text left=\"900\">Hello</text>
+  </page>"
+  expected="<article><span>Hello</span><span>World</span></article>"
+  actual=`echo ${xmldoc} | ${xsltprocCmd}`
+
+  assertEquals "${expected}" "${actual}"
+}
+
 testThatTwoTextElementPositionnedOnXAxisPreserveThereOrderRegardlessOfThereSourceAppearanceOrder() {
   xmldoc="$xmldocHeader
   <page>
