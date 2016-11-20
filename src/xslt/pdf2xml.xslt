@@ -26,7 +26,7 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="html" indent="no" />
+  <xsl:output method="html" />
 
   <xsl:template match="/pdf2xml">
     <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
