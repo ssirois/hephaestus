@@ -1,7 +1,8 @@
 Ἥφαιστος (Hephaestus) 
 =====================
 
-[![Build Status](https://travis-ci.org/ssirois/hephaestus.svg?branch=master)](https://travis-ci.org/ssirois/hephaestus)
+* [![gitlab.com build status](https://gitlab.com/ssirois/hephaestus/badges/master/build.svg)](https://gitlab.com/ssirois/hephaestus/commits/master)
+* [![travis.org Build Status](https://travis-ci.org/ssirois/hephaestus.svg?branch=master)](https://travis-ci.org/ssirois/hephaestus)
 
 Raison d'être
 -------------
